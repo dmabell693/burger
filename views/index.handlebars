@@ -1,10 +1,13 @@
-<h1 class="row justify-content-center mb-4">The Burgernator!</h1>
-
 <main class="container">
+
+<img src="/assets/images/burger-10956.png" alt="burger-image" class="mx-auto d-block img-responsive">
+
+  <h1 class="row justify-content-center mt-3 mb-4">The Burgernator!</h1>
+
   <div class="row mb-4">
 
     <div class="col-6">
-      <h2>Burgers in the queue:</h2>
+      <h2 class="text-center">Burgers in the queue:</h2>
 
       <ul class="list-group">
         {{#each burgers}}
@@ -16,7 +19,7 @@
     </div>
 
     <div class="col-6">
-      <h2>Burgers in the poo:</h2>
+      <h2 class="text-center">Burgers in the loo:</h2>
 
       <ul class="list-group">
         {{#each burgers}}
@@ -30,14 +33,14 @@
   </div>
 
   <div class="container">
-    <h2 class="row justify-content-center mb-4">Add a Burger You'd Like to Devour!</h2>
+    <h2 class="row justify-content-center text-center mb-4">Add a Burger You'd Like to Devour!</h2>
     <form class="container create-form">
 
       <div class="container justify-content-center text-center form-group mb-1">
         <label class="row justify-content-center" for="burger">Kind of Burger:</label>
         <input class="row justify-content-center m-auto mb-1" type="text" id="burger" name="burger_name">
 
-        <button class="row justify-content-center btn btn-primary btn-sm mt-2
+        <button class="row justify-content-center btn btn-warning btn-sm mt-2
         " type="submit">Add Burger</button>
       </div>
 
@@ -45,8 +48,7 @@
     </form>
   </div>
 
-  <footer class="footer">
-
-  </footer>
-
 </main>
+<footer class="footer">
+
+</footer>
