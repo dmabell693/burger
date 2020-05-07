@@ -1,5 +1,7 @@
+// dependency
 const orm = require("../config/orm");
 
+// insert default values into orm methods
 const burger = {
     selectAll: function(callback) {
         orm.selectAll("burgers", function(res) {

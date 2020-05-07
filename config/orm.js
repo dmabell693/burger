@@ -10,47 +10,29 @@ printQuestionMarks = num => {
     return arr.toString();
 }
 
-// objToSql = obj => {
-//     const arr = [];
+objToSql = obj => {
+    const arr = [];
 
-//     for (let key in obj) {
-//         let value = obj[key];
-
-//         if (Object.hasOwnProperty.call(obj, key)) {
-//             if (typeof value === "string" && value.indexOf(" ") >= 0) {
-//                 value = "'" + value + "'";
-//             }
-
-//             arr.push(key + "=" + value);
-//         }
-//     }
-
-//     return arr.toString();
-// }
-
-function objToSql(ob) {
-    var arr = [];
-  
     // loop through the keys and push the key/value as a string int arr
-    for (var key in ob) {
-      var value = ob[key];
-      // check to skip hidden properties
-      if (Object.hasOwnProperty.call(ob, key)) {
-        // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
-        if (typeof value === "string" && value.indexOf(" ") >= 0) {
-          value = "'" + value + "'";
+    for (let key in obj) {
+        let value = obj[key];
+        // check to skip hidden properties
+        if (Object.hasOwnProperty.call(obj, key)) {
+            // if string with spaces, add quotations (smokehouse burger => 'smokehouse burger')
+            if (typeof value === "string" && value.indexOf(" ") >= 0) {
+                value = "'" + value + "'";
+            }
+            // e.g. {burger_name: 'smokehouse burger'} => ["burger_name='smokehouse burger'"]
+            // e.g. {devoured: false} => ["devoured=false"]
+            arr.push(key + "=" + value);
         }
-        // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-        // e.g. {sleepy: true} => ["sleepy=true"]
-        arr.push(key + "=" + value);
-      }
     }
-  
     // translate array of strings to a single comma-separated string
     return arr.toString();
-  }
+}
 
 const orm = {
+    // grab entire list, devoured and not devoured, of burgers
     selectAll: function (tableInput, callback) {
         let queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function (err, results) {
@@ -61,6 +43,7 @@ const orm = {
         });
     },
 
+    // insert row into burgers table
     insertOne: function (table, cols, vals, callback) {
         let queryString = "INSERT INTO " + table;
 
@@ -82,6 +65,7 @@ const orm = {
         });
     },
 
+    // update burger to devoured
     updateOne: function (table, objColVals, condition, callback) {
         let queryString = "UPDATE " + table;
 
@@ -91,7 +75,7 @@ const orm = {
         queryString += condition;
 
         console.log(queryString);
-        connection.query(queryString, function(err, result) {
+        connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }

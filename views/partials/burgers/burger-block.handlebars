@@ -1,13 +1,5 @@
-{{!-- <li class="list-group-item">
-    {{burger_name}}
-    {{#if devour}}
-    {{else}}
-    <button class="change-devoured btn btn-primary btn-sm" data-id="{{id}}" data-newdevoured="{{devour}}">
-        DEVOUR IT!!
-    </button>
-    {{/if}}
-</li> --}}
-
+{{!--create two possibilities for implementation of <li> tags: #if devour = devoured; else = not devoured--}}
+    
 {{#if devour}}
 <li class="list-group-item disabled py-2">
     {{burger_name}}
@@ -20,12 +12,3 @@
     </button>
 </li>
 {{/if}}
-
-
-{{!-- <li>
-    {{burger_name}}
-
-    <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devour}}">
-        {{#if devour}}DEVOURED!{{else}}DEVOUR IT!!{{/if}}
-    </button>
-</li> --}}

@@ -1,4 +1,5 @@
 $(function() {
+    // event handler to update burger to 'devoured = true'
     $(".change-devoured").on("click", function(event) {
         let id = $(this).data("id");
         let newDevoured = $(this).data("newdevoured");
@@ -18,6 +19,7 @@ $(function() {
         );
     });
 
+    // event handler to add burger
     $(".create-form").on("submit", function(event) {
         event.preventDefault();
 
