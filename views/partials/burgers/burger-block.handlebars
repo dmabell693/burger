@@ -9,13 +9,13 @@
 </li> --}}
 
 {{#if devour}}
-<li class="list-group-item disabled">
+<li class="list-group-item disabled py-2">
     {{burger_name}}
 </li>
 {{else}}
-<li class="list-group-item">
+<li class="list-group-item py-2">
     {{burger_name}}
-    <button class="change-devoured btn btn-primary btn-sm" data-id="{{id}}" data-newdevoured="{{devour}}">
+    <button class="change-devoured btn btn-primary btn-sm py-0" data-id="{{id}}" data-newdevoured="{{devour}}">
         DEVOUR IT!!
     </button>
 </li>
