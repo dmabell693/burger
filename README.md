@@ -1,5 +1,5 @@
 
-# burgernator
+# The Burgernator
 
 This full-stack app lets you fantasize over juicy cow beef. Add the name of a burger you would enjoy consuming, then when you have indulged in your imaginary fantasy, click the "Devour It!!" button to see it move to the "Burgers in the loo" list.
 
